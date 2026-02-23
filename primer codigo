@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class GrafoMatriz {
+
+    public static void main(String[] args) {
+
+        // Vértices
+        String[] vertices = {"A","B","C","D"};
+
+        // Matriz 4x4
+        int[][] matriz = new int[4][4];
+
+        // Aristas: A-B, B-C, C-D, D-A
+        matriz[0][1] = 1;
+        matriz[1][0] = 1;
+
+        matriz[1][2] = 1;
+        matriz[2][1] = 1;
+
+        matriz[2][3] = 1;
+        matriz[3][2] = 1;
+
+        matriz[3][0] = 1;
+        matriz[0][3] = 1;
+
+        // Mostrar matriz
+        System.out.println("Matriz de Adyacencia:");
+
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
