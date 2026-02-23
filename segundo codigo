@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class GrafoLista {
+
+    public static void main(String[] args) {
+
+        HashMap<String, ArrayList<String>> grafo = new HashMap<>();
+
+        // Crear vértices
+        grafo.put("A", new ArrayList<>());
+        grafo.put("B", new ArrayList<>());
+        grafo.put("C", new ArrayList<>());
+        grafo.put("D", new ArrayList<>());
+
+        // Aristas: A-B, A-C, B-D
+        grafo.get("A").add("B");
+        grafo.get("B").add("A");
+
+        grafo.get("A").add("C");
+        grafo.get("C").add("A");
+
+        grafo.get("B").add("D");
+        grafo.get("D").add("B");
+
+        // Mostrar grafo
+        System.out.println("Lista de Adyacencia:");
+
+        for(String v : grafo.keySet()){
+            System.out.println(v + " -> " + grafo.get(v));
+        }
+    }
+}
